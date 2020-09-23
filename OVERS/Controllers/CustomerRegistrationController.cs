@@ -21,7 +21,7 @@ namespace OVERS.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Register(Custometbl c)
+        public IActionResult Register(custometbl c)
         {
             cd.Add(c);
             cd.SaveChanges();
@@ -30,11 +30,7 @@ namespace OVERS.Controllers
 
 
         }
-        [HttpPost]
-        public IActionResult ShowCustomers()
-        {
-            return View();
-        }
+       
 
         public IActionResult ShowCustomers(CustomerDB c)
         {
@@ -43,7 +39,9 @@ namespace OVERS.Controllers
             ViewBag.Message = "Data is successfully inserted";
             return View(cust);
         }
-        public IActionResult DisplayCustomer()
+       [ HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DisplayCustomers()
         {
             var result = cd.custometbl.ToList();
             return View(result);

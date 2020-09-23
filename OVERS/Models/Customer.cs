@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 namespace OVERS.Models
 {
-    public class Custometbl
+    public class custometbl
     {
          [Key]
         
