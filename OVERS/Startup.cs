@@ -54,7 +54,7 @@ namespace OVERS
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=CuctomerRegistration}/{action=Register}/{id?}");
+                    template: "{controller=CustomerRegistration}/{action=Register}/{id?}");
             });
         }
     }

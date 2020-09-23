@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 namespace OVERS.Models
 {
-    public class Custometb
+    public class Custometbl
     {
          [Key]
         
@@ -18,7 +18,15 @@ namespace OVERS.Models
         [Display(Name = "Last Name")]
         [Required(ErrorMessage = "please enter last name")]
         public string lname { get; set; }
-        
+        [Display(Name = "currentAddress")]
+        [Required(ErrorMessage = "please enter currentAddress")]
+        public string currentAddress { get; set; }
+        [Display(Name = "country")]
+        [Required(ErrorMessage = "please enter country")]
+        public string country { get; set; }
+
+
+
 
 
     }

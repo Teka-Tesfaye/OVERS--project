@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using OVERS.Models;
 namespace OVERS.Controllers
@@ -20,7 +21,7 @@ namespace OVERS.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Register(Custometb c)
+        public IActionResult Register(Custometbl c)
         {
             cd.Add(c);
             cd.SaveChanges();
@@ -39,7 +40,15 @@ namespace OVERS.Controllers
         {
             var cust = cd.custometbl.ToArray();
             cd.SaveChanges();
+            ViewBag.Message = "Data is successfully inserted";
             return View(cust);
         }
+        public IActionResult DisplayCustomer()
+        {
+            var result = cd.custometbl.ToList();
+            return View(result);
+        }
+
+    
     }
 }
